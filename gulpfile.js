@@ -1,6 +1,6 @@
 /* DEV PLUGINS------------------------------------------------------------------
  ---------------------------------------------------------------------------- */
-var gulp = require('gulp'),
+var   gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     pug = require('gulp-pug'),
     twig = require('gulp-twig'),
@@ -14,7 +14,7 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     notify = require('gulp-notify'),
     browserSync = require('browser-sync'),
-    compass = require('gulp-compass');
+    spritesmith = require('gulp.spritesmith');
 
 /* PRODUCTION PLUGINS ----------------------------------------------------------
  ---------------------------------------------------------------------------- */
@@ -57,7 +57,7 @@ var sources = {
     bower: {src: 'app/bower_components'},
     images: {
         icons: {
-            default: 'app/images/icons/*.png',
+            normal: 'app/images/icons/*.png',
             retina: 'app/images/icons/*@2x.png'
         },
         dist: 'app/images'
@@ -110,27 +110,24 @@ gulp.task('twig', function () {
     return null;
 });
 
-/* COMPASS ------------------------------------------------------------------ */
-gulp.task('compass', function () {
-    gulp.src(sources.sass.watch)
-        .pipe(plumber())
-        .pipe(compass({
-            sass: sources.sass.dist,
-            css: sources.css.dist,
-            js: sources.js.dist,
-            image: 'app/images',
-            source: true
+/* SPRITE ------------------------------------------------------------------- */
+gulp.task('sprite', function () {
+    var spriteData = gulp.src(sources.images.icons.normal)
+        .pipe(plumber({
+            errorHandler: onError
         }))
-        .pipe(prefix({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(gulp.dest(sources.css.dist))
-        .pipe(browserSync.reload({stream: true}));
+        .pipe(spritesmith({
+            imgName: 'sprite.png',
+            imgPath: '../images/sprite.png',
+            cssName: '_sprite.sass'
+        }));
+
+    spriteData.img.pipe(gulp.dest(sources.images.dist));
+    spriteData.css.pipe(gulp.dest(sources.sass.dist));
 });
 
 /* SASS --------------------------------------------------------------------- */
-gulp.task('sass', ["compass"], function () {
+gulp.task('sass', function () {
     return gulp.src(sources.sass.src)
         .pipe(plumber({
             errorHandler: onError
@@ -222,9 +219,7 @@ gulp.task('images', function () {
     gulp.src([
         'app/images/**',
         '!app/images/icons',
-        '!app/images/icons-2x',
-        '!app/images/icons/**',
-        '!app/images/icons-2x/**'
+        '!app/images/icons/**'
     ])
         .pipe(gulp.dest('dist/images'));
 });
@@ -233,11 +228,12 @@ gulp.task('images', function () {
  ---------------------------------------------------------------------------- */
 gulp.task('watch', function () {
     // gulp.watch('bower.json', ["bower"]);
-    gulp.watch(sources.sass.watch, ['compass']);
+    gulp.watch(sources.sass.watch, ['sass']);
     // gulp.watch(sources.pug.watch, ["pug"]);
     gulp.watch(sources.twig.watch, ["twig"]);
+    gulp.watch(sources.images.icons.default, ["sprite"]);
     gulp.watch(sources.js.es6_watch, ['es6']);
     gulp.watch(sources.js.watch).on('change', browserSync.reload);
 });
 
-gulp.task('default', ['browser-sync', 'es6', 'twig', 'compass', 'watch']);
+gulp.task('default', ['browser-sync', 'es6', 'twig', 'sass', 'sprite', 'watch']);

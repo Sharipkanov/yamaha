@@ -2,12 +2,387 @@
 
 {% block pageTitle %}Главная страница{% endblock %}
 
-<style>
-    .hello {
-        border: 2px solid #ffaaaa;
-    }
-</style>
-
 {% block content %}
-    <div class="logo"><i class="fri fri-qube-logo"></i></div>
+    <section id="welcome" class="fw-bg-cover fw-border-box fw-bg-center fw-bg-no-repeat fw-pt-76" style="background-image: url('images/section-welcome-bg.jpg')">
+        <div class="container">
+            <div class="fw-border-box fw-pr-20 fw-pb-20 fw-pt-20 fw-pt-40@s fw-pt-80@m fw-pt-135@l fw-border-style-solid-right fw-border-color-red fw-border-width-5">
+                <div class="fw-text-center">
+                    <i class="icon icon-wireless-music"></i>
+                </div>
+                <div class="fw-text-center fw-mt-65">
+                    <i class="icon icon-music-cast"></i>
+                </div>
+                <div class="fw-mt-40 fw-mt-20@m fw-text-center fw-text-left@m">
+                    <i class="icon icon-powered-by"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fw-bg-cover fw-bg-center fw-bg-no-repeat" style="background-image: url('images/section-re-music-bg.jpg')">
+        <div class="container">
+            <div class="fw-border-box fw-pl-20 fw-pr-20 fw-pt-80 fw-pb-65 fw-border-style-solid-left fw-border-color-red fw-border-width-5">
+                <div class="fw-grid fw-grid-30">
+                    <div class="fw-width-1-1 fw-width-1-2@m fw-flex fw-flex-middle fw-flex-center@l">
+                        <img src="images/re-music.png" alt="" class="fw-max-width-percent-100">
+                    </div>
+                    <div class="fw-width-1-1 fw-width-1-2@m">
+                        <div class="fw-width-1-1 fw-max-width-490">
+                            <p class="fw-fz-14 fw-color-red fw-line-height-1-5 fw-margin-none">Вне зависимости от того, где вы находитесь, какие решения вы принимаете, меняете ли вы свое будущее – музыка всегда с вами. Она добавляет краски в вашу жизнь, рисует узоры в вашем сердце и порой мгновенно меняет атмосферу, трансформируя грусть в радость.</p>
+                            <p class="fw-fz-14 fw-color-red fw-line-height-1-5 fw-mt-20 fw-mb-0">Еще до того, как появились такие слова, как «сетевое аудио», YAMAHA была на передовой в производстве беспроводных музыкальных систем.</p>
+                            <p class="fw-fz-14 fw-color-red fw-line-height-1-5 fw-mt-20 fw-mb-0">И на сегодняшний день компания представила нам эти революционные технологии в совершенно новом качестве.</p>
+                            <p class="fw-fz-14 fw-color-red fw-line-height-1-5 fw-mt-20 fw-mb-0">-MusicCast- <br> Новый взгляд на музыку, будоражащий ваше воображение. <br> Совершенно новая история о волшебстве звука начинается здесь и сейчас.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fw-bg-color-black">
+        <div class="container">
+            <div class="fw-pt-35 fw-pb-35">
+                <div class="fw-grid fw-border-style-solid fw-border-color-red fw-border-width-1">
+                    {% for i in 1..8 %}
+                    <div class="fw-width-1-1 fw-width-1-2@s fw-width-1-4@m">
+                        <div class="fw-box-proportional-100 fw-border-style-solid fw-border-color-red fw-border-width-1">
+                            <div>
+                                <img src="http://placehold.it/480x480" alt="" class="fw-img-cover">
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="re-style" class="fw-bg-cover fw-bg-center fw-bg-no-repeat" style="background-image: url('images/section-re-style-bg.jpg')">
+        <div class="container">
+            <div class="fw-border-box fw-pl-20 fw-pr-20 fw-pt-80 fw-pb-65 fw-border-style-solid-left fw-border-color-red fw-border-width-5">
+                <div class="fw-grid fw-grid-30">
+                    <div class="fw-width-1-1 fw-width-1-2@m">
+                        <div class="fw-flex fw-flex-middle fw-flex-center">
+                            <img src="images/section-re-style-image.png" alt="" class="fw-max-width-percent-100">
+                        </div>
+                    </div>
+                    <div class="fw-width-1-1 fw-width-1-2@m">
+                        <div class="fw-width-1-1 fw-max-width-490@m fw-text-center fw-text-left@m">
+                            <img src="images/re-style.png" alt="" class="fw-max-width-percent-100">
+                            <p class="fw-fz-14 fw-color-red fw-line-height-1-5 fw-margin-none">Новый стандарт, позволяющий вам выбрать любой способ воспроизведения музыки, от небольших настольных динамиков до HiFi аудио систем.</p>
+                            <p class="fw-fz-14 fw-color-red fw-line-height-1-5 fw-mt-20 fw-mb-0">Широкий спектр аудио устройств, филигранно откалиброванных и объединенных в сеть. Просто используйте MusicCast для того, чтобы контролировать их все.</p>
+                            <div class="fw-flex fw-flex-middle fw-mt-40 fw-flex-center fw-flex-left@m">
+                                <div class="fw-mr-20"><i class="icon icon-bluetooth-black"></i></div>
+                                <div><i class="icon icon-wifi-dark"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="half-black fw-border-box fw-border-style-solid-bottom fw-border-color-white fw-border-width-2">
+        <div class="container">
+            <div class="fw-relative fw-z-index-2">
+                <div class="fw-grid fw-flex-strech">
+                    <div class="fw-width-1-1 fw-width-2-5@m fw-border-box fw-border-style-solid-bottom fw-border-style-solid-right@s fw-border-width-2 fw-border-color-white">
+                        <div class="fw-border-box fw-padding-20 fw-bg-color-black fw-width-1-1 fw-height-1-1">
+                            <div class="fw-flex fw-flex-column fw-flex-center">
+                                <div><p class="fw-fz-14 fw-color-blue-light fw-margin-none fw-text-center fw-text-left@m">Наслаждайтесь любимой музыкой, воспроизводя ее с любых устройств с поддержкой <i>Bluetooth</i> и AirPlay</p></div>
+                                <div class="fw-text-center fw-text-left@m fw-mt-30"><i class="icon icon-phone-spot-music"></i></div>
+                                <div class="fw-flex fw-flex-wrap fw-flex-middle fw-mt-20 fw-flex-center fw-flex-left@m">
+                                    <div class="fw-mr-10 fw-mr-0@s"><i class="icon icon-airplay"></i></div>
+                                    <div class="fw-mt-20@s fw-mr-10 fw-mr-0@s"><i class="icon icon-bluetooth-white"></i></div>
+                                    <div class="fw-mt-20@s"><i class="icon icon-wifi-light-small"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fw-width-1-1 fw-width-1-5@m">
+                        <div class="fw-border-box fw-padding-20 fw-bg-color-black fw-width-1-1 fw-height-1-1">
+                            <p class="fw-fz-14 fw-color-blue-light fw-margin-none fw-text-center fw-text-left@m">Бекконечное удовольствие от музыки.</p>
+                            <p class="fw-fz-14 fw-color-blue-light fw-mt-20 fw-mb-0 fw-text-center fw-text-left@m">Поддержка большого количества музыкальных интернет сервисов.</p>
+                            <div class="fw-grid fw-grid-center fw-grid-left@m fw-grid-15 fw-mt-30 fw-flex-middle">
+                                <div class="fw-mr-20 fw-flex-grow-1"><i class="icon icon-spotify"></i></div>
+                                <div class="fw-flex-grow-1"><i class="icon icon-spotify-2"></i></div>
+                                <div class="fw-mr-20 fw-flex-grow-1"><i class="icon icon-napster"></i></div>
+                                <div class="fw-flex-grow-1"><i class="icon icon-juke"></i></div>
+                            </div>
+                            <p class="fw-mt-20 fw-mb-0 fw-color-white fw-fz-12 fw-text-center fw-text-left@m">* доступ к музыкальным сервисам варьируется в зависимости от модели и региона</p>
+                        </div>
+                    </div>
+                    <div class="fw-width-1-1 fw-width-2-5@m fw-bg-color-light">
+                        <div class="fw-height-1-1 fw-flex fw-flex-middle fw-border-box fw-padding-20 fw-padding-40@m">
+                            <p class="fw-margin-none fw-fz-24 fw-flex fw-flex-middle"><i class="icon icon-list-dot fw-mr-10"></i> Режим СОЛО</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fw-bg-color-red fw-border-box fw-pt-20 fw-pb-20">
+        <div class="container">
+            <div class="fw-grid fw-flex-strech">
+                <div class="fw-width-1-1 fw-width-2-5@m"></div>
+                <div class="fw-width-1-1 fw-width-1-5@m"></div>
+                <div class="fw-width-1-1 fw-width-2-5@m">
+                    <div class="fw-height-1-1 fw-flex fw-flex-middle fw-border-box fw-pl-40@m fw-pr-40@m">
+                        <p class="fw-margin-none fw-fz-24">Режим воспроизведения MusicCast</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="half-black fw-border-box fw-border-style-solid-top fw-border-color-white fw-border-width-2">
+        <div class="container">
+            <div class="fw-relative fw-z-index-2">
+                <div class="fw-grid fw-flex-strech">
+                    <div class="fw-width-1-1 fw-width-2-5@m fw-border-box fw-border-style-solid-bottom fw-border-style-solid-right@s fw-border-width-2 fw-border-color-white">
+                        <div class="fw-border-box fw-padding-20 fw-bg-color-black fw-width-1-1 fw-height-1-1">
+                            <div class="fw-flex fw-flex-column fw-flex-center">
+                                <div><p class="fw-fz-14 fw-color-blue-light fw-margin-none fw-text-center fw-text-left@m">
+                                        Наслаждайтесь звучанием телевизорных програм, Blu-ray видео, CD дисков и также виниловых пластинок в любой комнате вашего дома</p></div>
+                                <div class="fw-mt-20 fw-text-center fw-text-left@m"><img src="images/program-image.png" alt="" class="fw-max-width-percent-100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fw-width-1-1 fw-width-1-5@m">
+                        <div class="fw-border-box fw-padding-20 fw-bg-color-black fw-width-1-1 fw-height-1-1">
+                            <p class="fw-fz-14 fw-color-blue-light fw-margin-none fw-text-center fw-text-left@m">Поддержка музыкального контента высокого качества</p>
+                            <div class="fw-mt-10 fw-text-center fw-text-left@m"><img src="images/content-quality.png" alt="" class="fw-max-width-percent-100"></div>
+                            <p class="fw-mt-20 fw-mb-0 fw-color-white fw-fz-12 fw-text-center fw-text-left@m">* формат и качество сэмплирования может меняться в зависимости от модели</p>
+                        </div>
+                    </div>
+                    <div class="fw-width-1-1 fw-width-2-5@m fw-bg-color-light">
+                        <div class="fw-height-1-1 fw-flex fw-flex-middle fw-border-box fw-padding-20 fw-padding-40@m">
+                            <p class="fw-margin-none fw-fz-24 fw-flex fw-flex-middle"><i class="icon icon-list-dots fw-mr-10"></i> Многокомнатный режим</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beauty-and-cleaver" class="fw-bg-color-white fw-border-box fw-pt-40 fw-pb-40">
+        <div class="container">
+            <p class="fw-margin-none fw-fz-36">Красивый и Умный Контроль</p>
+        </div>
+    </section>
+
+    <section class="fw-bg-color-red fw-border-box fw-pt-10 fw-pb-10">
+        <div class="container">
+            <p class="fw-margin-none fw-fz-24 fw-color-white fw-fz-22">Приложение Musiccast</p>
+        </div>
+    </section>
+
+    <section class="fw-bg-color-white fw-border-box fw-pt-40">
+        <div class="container">
+            <div class="fw-flex fw-flex-column fw-flex-row@m">
+                <div class="fw-flex-grow-1 fw-mb-40">
+                    <p class="fw-margin-none fw-fz-14 fw-color-red fw-line-height-1-5">Слушайте музыку и управляйте всеми вашими устройствами так, как вы пожелаете, используя софт с великолепным дизайном. Используйте все возможности приложения, которые делают управление максимально удобным и комфортным, среди которых такие функции, как Link, позволяющая проигрывать одну и ту же композицию в разных комнатах, а так же функция Room Display Customise, которая позволит назначить разные треки на каждую комнату. Безграничное наслаждение музыкой в вашей ладони.</p>
+                    <div class="fw-flex fw-flex-middle fw-mt-30 fw-flex-center fw-flex-left@s">
+                        <div class="fw-mr-10"><a href=""><i class="icon icon-appstore"></i></a></div>
+                        <div><a href=""><i class="icon icon-google-play"></i></a></div>
+                    </div>
+                </div>
+                <div class="fw-flex-shrink-no fw-ml-30@m fw-mb-40">
+                    <div class="fw-flex fw-flex-column fw-flex-row@s fw-flex-middle fw-flex-top@s fw-text-center fw-text-left@s">
+                        <div class="fw-mr-20@s fw-mb-20 fw-mb-0@ss">
+                            <div><img src="images/phone-screen-1.jpg" alt="" class="fw-max-width-percent-100"></div>
+                            <p class="fw-fz-12 fw-mt-10 fw-mb-0 fw-color-iron">Выбор комнаты</p>
+                        </div>
+                        <div class="fw-mr-20@s fw-mb-20 fw-mb-0@s">
+                            <div><img src="images/phone-screen-2.jpg" alt="" class="fw-max-width-percent-100"></div>
+                            <p class="fw-fz-12 fw-mt-10 fw-mb-0 fw-color-iron">Выбор контента</p>
+                        </div>
+                        <div>
+                            <div><img src="images/phone-screen-3.jpg" alt="" class="fw-max-width-percent-100"></div>
+                            <p class="fw-fz-12 fw-mt-10 fw-mb-0 fw-color-iron">Воспроизведение композиции</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fw-border-box fw-pt-40 fw-pb-40 fw-bg-no-repeat fw-bg-cover" style="background-image: url('images/section-re-quality-bg.jpg')">
+        <div class="container">
+            <div class="fw-grid fw-grid-20">
+                <div class="fw-width-1-1 fw-width-1-2@m">
+                    <span class="fw-fz-18 fw-color-red">Как в полной мере насладиться музыкой с Musiccast</span>
+                    <p class="fw-mt-10 fw-line-height-1-5 fw-fz-14 fw-flex fw-flex-middle">
+                        <span class="fw-flex-shrink-no fw-mr-10"><i class="icon icon-phone-spot"></i></span>
+                        <span class="fw-flex-grow-1 fw-mt-5">Приложение MusicCast дает возможность получить полный контроль над воспроизведением вашей музки во всех комнатах</span>
+                    </p>
+                </div>
+                <div class="fw-width-1-1 fw-width-1-2@m">
+                    <p class="fw-mt-0 fw-mb-5 fw-color-red fw-fz-12">ISX-80</p>
+                    <span class="fw-fz-24 fw-font-italic fw-color-red">На кухне</span>
+                    <p class="fw-mt-10 fw-line-height-1-5 fw-fz-14">Отправьте звук с Зала на Кухню и слушайте ТВ во время приготовления еды</p>
+                </div>
+                <div class="fw-width-1-1 fw-width-1-2@m">
+                    <p class="fw-mt-0 fw-mb-5 fw-color-red fw-fz-12">ISX-80</p>
+                    <span class="fw-fz-24 fw-font-italic fw-color-red">И зале</span>
+                    <p class="fw-mt-10 fw-line-height-1-5 fw-fz-14">Отправьте звук с Зала на Кухню и слушайте ТВ во время приготовления еды</p>
+                </div>
+                <div class="fw-width-1-1 fw-width-1-2@m">
+                    <p class="fw-mt-0 fw-mb-5 fw-color-red fw-fz-12">WX-030</p>
+                    <span class="fw-fz-24 fw-font-italic fw-color-red">И в спальне</span>
+                    <p class="fw-mt-10 fw-line-height-1-5 fw-fz-14">Теперь  вы можете наслаждаться музыкой с любых источников даже в спальне</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fw-border-box fw-border-style-solid-top fw-border-color-red fw-border-width-5">
+        <div class="fw-border-box fw-border-style-solid-bottom fw-border-color-red fw-border-width-5 fw-color-iron">
+            <div class="container">
+                <div class="fw-border-box fw-pt-30 fw-pb-30">
+                    <div class="fw-grid fw-grid-20">
+                        <div class="fw-width-1-1 fw-width-2-3@s fw-width-1-2@m">
+                            <p class="fw-margin-none fw-fz-24">Выход <i>Bluetooth</i></p>
+                            <p class="fw-mt-5 fw-mb-0 fw-fz-18">для удобного потокового воспроизведения музыки</p>
+                        </div>
+                        <div class="fw-width-1-1 fw-width-1-3@s fw-width-1-2@m">
+                            <i class="icon icon-music-notes"></i>
+                        </div>
+                    </div>
+                    <div class="fw-grid fw-grid-20 fw-mt-20">
+                        <div class="fw-width-1-1 fw-width-2-3@s fw-width-1-2@m">
+                            <p class="fw-margin-none">Устройства MusicCast могут передавать
+                                аудио сигнал на любое устройство с поддержкой
+                                Bluetooth через Bluetooth соединение.</p>
+                        </div>
+                        <div class="fw-width-1-1 fw-width-1-3@s fw-width-1-2@m">
+                            <i class="icon icon-headphone-notes"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fw-border-box fw-pt-40 fw-pb-40 fw-bg-no-repeat fw-bg-cover" style="background-image: url('images/section-re-quality-bg.jpg')">
+        <div class="container">
+            <div id="re-style-carousel" class="owl-carousel">
+                <div class="item">
+                    <div class="fw-grid fw-grid-20 fw-border-box fw-pr-65@s fw-pl-65@s">
+                        <div class="fw-width-1-1 fw-width-2-5@m">
+                            <div class="fw-mb-20 fw-mt-10"><img src="images/re-quality.png" alt="" class="fw-max-width-percent-100"></div>
+                            <p class="fw-fz-16 fw-color-red fw-line-height-1-5 fw-margin-none">Если вы не получили того, чего хотели бы получить – вы не испытаете будоражащее волнение.</p>
+                            <p class="fw-mt-10 fw-fz-16 fw-color-red fw-line-height-1-5 fw-margin-none">Если ваши желания не исполнены до конца – вы не получите полного удовлетворения.</p>
+                            <p class="fw-mt-10 fw-fz-16 fw-color-red fw-line-height-1-5 fw-margin-none">MusicCast совершил прорыв во всех аспектах – от качества звука до функциональности.</p>
+                        </div>
+                        <div class="fw-width-1-1 fw-width-3-5@m">
+                            <div>
+                                <p class="fw-margin-none fw-flex fw-flex-bottom fw-fz-24">
+                                    <span class="fw-mr-10"><i class="icon icon-number-one"></i></span>
+                                    <span class="fw-block fw-mb-inverse-5">Брэнд со 125 летней историей</span>
+                                </p>
+                                <p class="fw-fz-14 fw-color-iron fw-mt-20 fw-mb-0 fw-line-height-1-5">Имея за плечами более чем 125–ти летнюю историю, YAMAHA зарекомендовала
+                                    себя как премиум брэнд, охватывающий и олицетворяющий звук и музыку.
+                                    Yamaha - это компания, которая знает о звуке все. Охватывая все сферы производства,
+                                    от музыкальных инструментов, профессионального оборудования для записи,
+                                    до концертного звука, и, даже звуковых инсталляционных решений для концертных залов,
+                                    YAMAHA занимает лидирующие позиции в индустрии. Используя весь полученный
+                                    за многолетнюю историю опыт и новейшие технологии, YAMAHA создала поистине
+                                    революционный продукт – MusicCast.</p>
+                                <div class="fw-mt-30"><i class="icon icon-yamaha-black"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specifications" class="fw-bg-color-white fw-border-box fw-pt-40 fw-pb-40">
+        <div class="container">
+            <p class="fw-margin-none fw-fz-18 fw-color-red">Спецификации</p>
+            <div class="fw-max-width-490 fw-width-1-1 fw-height-3 fw-bg-color-red fw-mt-10"></div>
+            <div id="products-carousel" class="owl-carousel fw-mt-80">
+                <div class="item">
+                    <div>
+                        <div class="fw-text-center"><img src="images/carousel-item-1.png" alt="" class="fw-max-width-percent-100"></div>
+                        <p class="fw-mt-20 fw-mb-10">ISX-80</p>
+                        <div><span>Интегрированная аудио система</span></div>
+                        <ul class="fw-margin-none fw-pl-15 fw-color-red fw-fz-12 fw-mt-20">
+                            <li class="fw-mt-5 fw-line-height-1-5">Максимальная мощьность: <br>15W +15W (6Ом, 1kHz, 10% КНИ)</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Спикер: <br> 3 см Твиттер с мягким куполом - 2 шт, <br> 8 см Вуфер - 2 шт</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Энергопотребление в режиме Standby: 3.0 W</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Габариты (длинна, высота, глубина): <br> 302x302x66 мм</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Вес: 3.3кг</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="fw-text-center"><img src="images/carousel-item-2.png" alt="" class="fw-max-width-percent-100"></div>
+                        <p class="fw-mt-20 fw-mb-10">WX-030</p>
+                        <div><span>Беспроводная Колонка</span></div>
+                        <ul class="fw-margin-none fw-pl-15 fw-color-red fw-fz-12 fw-mt-20">
+                            <li class="fw-mt-5 fw-line-height-1-5">Максимальная мощьность: <br>40 W(6 Ом, 1 kHz, 10% КНИ)</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Спикер: <br> 3 см Твиттер, <br>9 см Буфер, <br>Пассивное охлаждение</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Энергопотребление в режиме Standby: 2.0 W</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Габариты (длинна, высота, глубина): <br> 247x157x113 мм</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="fw-text-center"><img src="images/carousel-item-3.png" alt="" class="fw-max-width-percent-100"></div>
+                        <p class="fw-mt-20 fw-mb-10">YSP-1600</p>
+                        <div><span>Цифровой звуковой проектор</span></div>
+                        <ul class="fw-margin-none fw-pl-15 fw-color-red fw-fz-12 fw-mt-20">
+                            <li class="fw-mt-5 fw-line-height-1-5">Система: 5.1</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Максимальная выходная мощность: <br>
+                                80 W общая мощность (Высокочастотные динамики <br>
+                                2.5 W - 8 шт.. Буфер 30 W - 2 пгг.)</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Спикер: <br>
+                                Высокочастотные динамики: 2.8 см - 8 шт.. Буфер - 8.5 см - 2 шт.,</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Энергопотребление в режиме Standby: 1.8 W</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Габариты (длинна высота глубина): <br>
+                                1000 х 65 х 130 мм (габариты с антенной: 1000 x134 x152 мм)</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Вес: 4.7 кг</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="fw-text-center"><img src="images/carousel-item-4.png" alt="" class="fw-max-width-percent-100"></div>
+                        <p class="fw-mt-20 fw-mb-10">YSP-5600SW <br>[Звуковая панель]</p>
+                        <div><span>Цифровой звуковой проектор</span></div>
+                        <ul class="fw-margin-none fw-pl-15 fw-color-red fw-fz-12 fw-mt-20">
+                            <li class="fw-mt-5 fw-line-height-1-5">Система: 9.1</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Максимальная выходная мощность: <br>
+                                128 W общая мощность (Высокочастотные динамики 88 W., <br>
+                                Буфер 20 W - 2 пгг.)</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Спикер: <br>
+                                Высокочастотные динамики горизонтальные: 4 см-32 пгг., <br>
+                                Высокочастотные динамики вертикальные: 2.8 см -12 пгг.. <br>
+                                Буфер - 11 см - 2 пгг.,</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Энергопотребление в режиме Standby: 1.6 W</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Габариты (длинна высота глубина): <br>
+                                1100 х 212 х 93 мм (габариты со стойкой: 1100 х 216 х 122 мм)</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Вес: 11.7 кг [Сабвуфер]</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Максимальная выходная мощность: <br>
+                                250 W (5 Ом, 10 Hz, 10% КНИ),</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Спикер: <br>
+                                Конусообразный динамик - 25 см.,</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Габариты (длинна высота глубина): <br>
+                                350 х 366 х 420 мм (габариты со стойкой: 1100 x216 x122 мм)</li>
+                            <li class="fw-mt-5 fw-line-height-1-5">Вес: 18 кг</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

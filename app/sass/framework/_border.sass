@@ -9,7 +9,7 @@
   .fw-border-radius-percent-#{$value}
     border-radius: unquote("#{$value}%")
 
-@each $value in white_#{$colorWhite}, black_#{$colorBlack}
+@each $value in white_#{$colorWhite}, black_#{$colorBlack}, red_#{$colorRed}, blue-light_#{$colorBlueLight}, iron_#{$colorIron}, light_#{$colorLight}
   $values: str_split($value, '_')
   $color: nth($values, 2)
   $colorName: nth($values, 1)
@@ -20,47 +20,97 @@
 .fw-border-style-solid
   border-style: solid
 
+.fw-border-style-solid\@xs
+  @media screen and (min-width: $extraSmall)
+    border-style: solid
+
+.fw-border-style-solid\@s
+  @media screen and (min-width: $small)
+    border-style: solid
+
+.fw-border-style-solid\@m
+  @media screen and (min-width: $medium)
+    border-style: solid
+
+.fw-border-style-solid\@l
+  @media screen and (min-width: $large)
+    border-style: solid
+
 .fw-border-style-solid-top
   border-style: solid none none none
 
+.fw-border-style-solid-top\@xs
+  @media screen and (min-width: $extraSmall)
+    border-style: solid none none none
+
+.fw-border-style-solid-top\@s
+  @media screen and (min-width: $small)
+    border-style: solid none none none
+
+.fw-border-style-solid-top\@m
+  @media screen and (min-width: $medium)
+    border-style: solid none none none
+
+.fw-border-style-solid-top\@l
+  @media screen and (min-width: $large)
+    border-style: solid none none none
+
 .fw-border-style-solid-left
-  border-style: none solid none none
+  border-style: none none none solid
+
+.fw-border-style-solid-left\@xs
+  @media screen and (min-width: $extraSmall)
+    border-style: none none none solid
+
+.fw-border-style-solid-left\@s
+  @media screen and (min-width: $small)
+    border-style: none none none solid
+
+.fw-border-style-solid-left\@m
+  @media screen and (min-width: $medium)
+    border-style: none none none solid
+
+.fw-border-style-solid-left\@l
+  @media screen and (min-width: $large)
+    border-style: none none none solid
 
 .fw-border-style-solid-bottom
   border-style: none none solid none
 
+.fw-border-style-solid-bottom\@xs
+  @media screen and (min-width: $extraSmall)
+    border-style: none none solid none
+
+.fw-border-style-solid-bottom\@s
+  @media screen and (min-width: $small)
+    border-style: none none solid none
+
+.fw-border-style-solid-bottom\@m
+  @media screen and (min-width: $medium)
+    border-style: none none solid none
+
+.fw-border-style-solid-bottom\@l
+  @media screen and (min-width: $large)
+    border-style: none none solid none
+
 .fw-border-style-solid-right
-  border-style: none none none solid
+  border-style: none solid none none
 
-.fw-border-style-dashed
-  border-style: dashed
+.fw-border-style-solid-right\@xs
+  @media screen and (min-width: $extraSmall)
+    border-style: none solid none none
 
-.fw-border-style-dashed-top
-  border-style: dashed none none none
+.fw-border-style-solid-right\@s
+  @media screen and (min-width: $small)
+    border-style: none solid none none
 
-.fw-border-style-dashed-left
-  border-style: none dashed none none
+.fw-border-style-solid-right\@m
+  @media screen and (min-width: $medium)
+    border-style: none solid none none
 
-.fw-border-style-dashed-bottom
-  border-style: none none dashed none
-
-.fw-border-style-dashed-right
-  border-style: none none none dashed
-
-.fw-border-style-dotted
-  border-style: dotted
-
-.fw-border-style-dotted-top
-  border-style: dotted none none none
-
-.fw-border-style-dotted-left
-  border-style: none dotted none none
-
-.fw-border-style-dotted-bottom
-  border-style: none none dotted none
-
-.fw-border-style-dotted-right
-  border-style: none none none dotted
+.fw-border-style-solid-right\@l
+  @media screen and (min-width: $large)
+    border-style: none solid none none
 
 .fw-border-box
   box-sizing: border-box

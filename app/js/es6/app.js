@@ -248,12 +248,10 @@ class YOURAPPNAME {
     const app = new YOURAPPNAME(document);
 
     app.appLoad('loading', function () {
-        console.log('App is loading... Paste your app code here.');
         // App is loading... Paste your app code here. 4example u can run preloader event here and stop it in action appLoad dom or full
     });
 
     app.appLoad('dom', function () {
-        console.log('DOM is loaded! Paste your app code here (Pure JS code).');
         // DOM is loaded! Paste your app code here (Pure JS code).
         // Do not use jQuery here cause external libs do not loads here...
 
@@ -261,9 +259,109 @@ class YOURAPPNAME {
     });
 
     app.appLoad('full', function (e) {
-        console.log('App was fully load! Paste external app source code here... For example if your use jQuery and something else');
         // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
         // Please do not use jQuery ready state function to avoid mass calling document event trigger!
+
+        (function() {
+            const $navigation = $('#navigation'),
+                $navigationList = $navigation.children(),
+                $navigationItems = $navigationList.children(),
+                $navigationTrigger = $('#navigation-trigger'),
+                navigationMobileClass = 'navigation--mobile',
+                navigationInitClass = 'navigation--init',
+                navigationMobileOpenedClass = 'navigation--mobile-opened';
+
+            let nlw = 0;
+
+            $navigation.on('navigation.mobile', function() {
+                $navigation.addClass(navigationMobileClass);
+                $navigation.removeClass(navigationInitClass);
+            });
+
+            $navigation.on('navigation.desktop', function() {
+                $navigation.removeClass(navigationMobileClass);
+                $navigation.removeClass(navigationInitClass);
+            });
+
+            $navigation.on('navigation.show', function() {
+                $navigationList.stop().slideDown();
+            });
+
+            $navigation.on('navigation.hide', function() {
+                $navigationList.stop().slideUp();
+            });
+
+            $navigationItems.each(function() {
+                nlw += $(this).outerWidth();
+            });
+
+            if(nlw > $navigation.outerWidth()) {
+                $navigation.trigger('navigation.mobile');
+                $navigationTrigger.addClass('active');
+            } else {
+                $navigation.trigger('navigation.desktop');
+                $navigationTrigger.removeClass('active');
+            }
+
+            $(window).resize(function() {
+                if(nlw > $navigation.outerWidth()) {
+                    $navigation.trigger('navigation.mobile');
+                    $navigationTrigger.addClass('active');
+                } else {
+                    $navigation.trigger('navigation.desktop');
+                    $navigationTrigger.removeClass('active');
+                }
+            });
+
+            $navigationTrigger.click(function(e) {
+                e.preventDefault();
+
+                if($navigation.hasClass(navigationMobileOpenedClass)) {
+                    $navigation.removeClass(navigationMobileOpenedClass);
+                    $navigation.trigger('navigation.hide');
+                } else {
+                    $navigation.addClass(navigationMobileOpenedClass);
+                    $navigation.trigger('navigation.show');
+                }
+            })
+        })();
     });
 
+    $(".link-to").click(function(e) {
+        e.preventDefault();
+
+        $('#navigation').trigger('navigation.hide');
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top
+        }, 800);
+    });
+
+    const $reStyleCarousel = $('#re-style-carousel');
+
+    $reStyleCarousel.owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        items: 1
+    });
+
+    const $productsCarousel = $('#products-carousel');
+
+    $productsCarousel.owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:4
+            }
+        }
+    });
+ 
 })();

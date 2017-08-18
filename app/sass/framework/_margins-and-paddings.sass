@@ -13,7 +13,52 @@
 .fw-ml-auto
   margin-top: auto
 
-@each $value in 0, 5
+.fw-margin-none
+  margin: 0
+
+.fw-padding-none
+  padding: 0
+
+@each $value in 15, 20, 40
+  .fw-margin-#{$value}
+    margin: #{$value}px
+
+  .fw-margin-#{$value}\@xs
+    @media screen and (min-width: $extraSmall)
+      margin: #{$value}px
+
+  .fw-margin-#{$value}\@s
+    @media screen and (min-width: $small)
+      margin: #{$value}px
+
+  .fw-margin-#{$value}\@m
+    @media screen and (min-width: $medium)
+      margin: #{$value}px
+
+  .fw-margin-#{$value}\@l
+    @media screen and (min-width: $large)
+      margin: #{$value}px
+
+  .fw-padding-#{$value}
+    padding: #{$value}px
+
+  .fw-padding-#{$value}\@xs
+    @media screen and (min-width: $extraSmall)
+      padding: #{$value}px
+
+  .fw-padding-#{$value}\@s
+    @media screen and (min-width: $small)
+      padding: #{$value}px
+
+  .fw-padding-#{$value}\@m
+    @media screen and (min-width: $medium)
+      padding: #{$value}px
+
+  .fw-padding-#{$value}\@l
+    @media screen and (min-width: $large)
+      padding: #{$value}px
+
+@each $value in 0, 10, 15, 5, 20, 25, 30, 35, 40, 65, 76, 80, 135
   .fw-mt-#{$value}
     margin-top: #{$value}px
 

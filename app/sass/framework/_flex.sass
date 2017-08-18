@@ -1,8 +1,27 @@
- .fw-flex
+.fw-flex
   display: flex
 
   > *
     min-width: 0
+
+  &.fw-flex-strech
+    align-items: stretch
+
+  &.fw-flex-strech\@xs
+    @media screen and (min-width: $extraSmall)
+      align-items: stretch
+
+  &.fw-flex-strech\@s
+    @media screen and (min-width: $small)
+      align-items: stretch
+
+  &.fw-flex-strech\@m
+    @media screen and (min-width: $medium)
+      align-items: stretch
+
+  &.fw-flex-strech\@l
+    @media screen and (min-width: $large)
+      align-items: stretch
 
   &.fw-flex-column
     flex-direction: column
