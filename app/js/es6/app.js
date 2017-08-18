@@ -330,7 +330,6 @@ class YOURAPPNAME {
     $(".link-to").click(function(e) {
         e.preventDefault();
 
-        $('#navigation').trigger('navigation.hide');
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top
         }, 800);
